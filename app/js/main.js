@@ -1,57 +1,47 @@
 //для мобильного меню
-(()=> {
+(() => {
   const burger = () => {
-  const navBtn = document.getElementById('navMenu');
-navBtn.style.display === 'none' ? navBtn.style.display = 'block' : navBtn.style.display = 'none';
-};
-document.getElementById('btn').addEventListener('click', burger);
+    const navBtn = document.getElementById('navMenu');
+    navBtn.style.display === 'none' ? navBtn.style.display = 'block' : navBtn.style.display = 'none';
+  };
+  document.getElementById('btn').addEventListener('click', burger);
 })();
-
 // burger
-(()=> {
-
-let btn = document.querySelector('.menu-btn');
-let nav = document.getElementById('nav');
-
-btn.addEventListener('click',function () {
-  nav.classList.toggle('active');
-});
+(() => {
+  let btn = document.querySelector('.menu-btn');
+  let nav = document.getElementById('nav');
+  btn.addEventListener('click', function () {
+    nav.classList.toggle('active');
+  });
 })();
-
 // accordion
-(()=>{
+(() => {
   const acc = document.getElementsByClassName("accordion__header");
   let i;
-
   for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
+    acc[i].onclick = function () {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("show");
     }
   }
 })();
-
 // прокрутка по якорям
-(()=> {
+(() => {
   // // собираем все якоря; устанавливаем время анимации и количество кадров
 // const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
 //       animationTime = 300,
 //       framesCount = 20;
-
 // anchors.forEach(function(item) {
 //   // каждому якорю присваиваем обработчик события
 //   item.addEventListener('click', function(e) {
 //     // убираем стандартное поведение
 //     e.preventDefault();
-
 //     // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
 //     let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top;
-
 //     // запускаем интервал, в котором
 //     let scroller = setInterval(function() {
 //       // считаем на сколько скроллить за 1 такт
 //       let scrollBy = coordY / framesCount;
-
 //       // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
 //       // и дно страницы не достигнуто
 //       if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
@@ -66,9 +56,6 @@ btn.addEventListener('click',function () {
 //     }, animationTime / framesCount);
 //   });
 // });
-
-
-
 // function currentYPosition() {
 //     // Firefox, Chrome, Opera, Safari
 //     if (self.pageYOffset) return self.pageYOffset;
@@ -79,8 +66,6 @@ btn.addEventListener('click',function () {
 //     if (document.body.scrollTop) return document.body.scrollTop;
 //     return 0;
 // }
-
-
 // function elmYPosition(eID) {
 //     var elm = document.getElementById(eID);
 //     var y = elm.offsetTop;
@@ -90,8 +75,6 @@ btn.addEventListener('click',function () {
 //         y += node.offsetTop;
 //     } return y;
 // }
-
-
 // function smoothScroll(eID) {
 //     var startY = currentYPosition();
 //     var stopY = elmYPosition(eID);
@@ -115,15 +98,11 @@ btn.addEventListener('click',function () {
 //         leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
 //     }
 // }
-
   const anchors = document.querySelectorAll('a[href*="#"]')
-
   for (let anchor of anchors) {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-
       const blockID = anchor.getAttribute('href');
-
       document.querySelector('' + blockID).scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -131,13 +110,8 @@ btn.addEventListener('click',function () {
     })
   }
 })();
-
-
-(()=>{
-
+(() => {
 })();
-
-
 //кнопка на вверх
 // $(function () {
 //   $(window).scroll(function () {
@@ -152,14 +126,12 @@ btn.addEventListener('click',function () {
 //     }, 800);
 //   });
 // });
-
-(function() {
+(function () {
   'use strict';
 
   function trackScroll() {
     let scrolled = window.pageYOffset;
     let coords = document.documentElement.clientHeight;
-
     if (scrolled > coords) {
       goTopBtn.classList.add('topButton__show');
     }
@@ -176,7 +148,39 @@ btn.addEventListener('click',function () {
   }
 
   let goTopBtn = document.querySelector('.topButton');
-
   window.addEventListener('scroll', trackScroll);
   goTopBtn.addEventListener('click', backToTop);
 })();
+// slider
+(() => {
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slider__item");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+})()

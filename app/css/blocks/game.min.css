@@ -1,0 +1,18 @@
+.game {
+  width: 100%;
+}
+
+.game__inner {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.game__video {
+  width: 50%;
+}
+
+.game__slider {
+  width: 50%;
+}
