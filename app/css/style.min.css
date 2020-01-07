@@ -711,6 +711,8 @@ body, html {
 }
 
 .logo {
+  bottom: 57px;
+  position: absolute;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -718,9 +720,7 @@ body, html {
 }
 
 .logo__picture {
-  top: -35px;
-  left: 47%;
-  position: absolute;
+  left: 50%;
   width: 100px;
   height: 100px;
 }
@@ -1134,10 +1134,16 @@ body, html {
 
 .game__video {
   width: 50%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
 }
 
 .game__slider {
   width: 50%;
+  padding: 10px;
 }
 
 .slider {
@@ -1217,6 +1223,14 @@ body, html {
 @media (max-width: 920px) {
   .main-header__phone {
     right: 20%;
+  }
+  .logo {
+    left: 50%;
+    bottom: 109px;
+  }
+  .logo__picture {
+    width: 60px;
+    height: 60px;
   }
   .main-menu {
     min-width: 320px;
@@ -1416,13 +1430,6 @@ body, html {
 @media (max-width: 684px) {
   .hidden-menu {
     padding-top: 90px;
-  }
-  .logo {
-    top: -20px;
-  }
-  .logo__picture {
-    width: 60px;
-    height: 60px;
   }
 }
 

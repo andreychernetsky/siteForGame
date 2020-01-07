@@ -4,6 +4,15 @@
       right: 20%;
     }
   }
+  .logo {
+    left: 50%;
+    bottom: 109px;
+    &__picture {
+      width: 60px;
+      height: 60px;
+    }
+
+  }
   .main-menu {
     min-width: 320px;
     display: none;
@@ -190,14 +199,7 @@
     padding-top: 90px;
   }
 
-  .logo {
-    top: -20px;
-    &__picture {
-      width: 60px;
-      height: 60px;
-    }
 
-  }
 }
 
 @media (max-width: 480px) {
