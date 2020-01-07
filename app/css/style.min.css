@@ -712,11 +712,12 @@ body, html {
 
 .logo {
   position: relative;
-  top: -64px;
+  top: -34px;
   left: 47%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  z-index: 60;
 }
 
 .logo__picture {
@@ -777,6 +778,7 @@ body, html {
 }
 
 .main-menu {
+  position: relative;
   width: 100%;
   display: block;
   background-color: var(--white);
@@ -1146,40 +1148,7 @@ body, html {
   max-width: 100%;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  -webkit-transition: 0.6s ease;
-  -o-transition: 0.6s ease;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.dot {
+.slider__dot {
   cursor: pointer;
   height: 25px;
   width: 25px;
@@ -1192,8 +1161,39 @@ body, html {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.slider .active, .slider__dot:hover {
   background-color: #717171;
+}
+
+.slider__prev, .slider__next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #593b2f;
+  background: #ffa834;
+  opacity: 0.5;
+  font-weight: 700;
+  font-size: 2rem;
+  -webkit-transition: 0.6s ease;
+  -o-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 5px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.slider__next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.slider__prev:hover, .slider__next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 920px) {
@@ -1201,8 +1201,14 @@ body, html {
     right: 20%;
   }
   .main-menu {
-    width: 100%;
+    min-width: 320px;
     display: none;
+    position: absolute;
+    opacity: 0.3;
+    top: 10%;
+    left: 0;
+    right: 0;
+    background-color: black;
   }
   .main-menu__list {
     display: -webkit-box;
@@ -1212,65 +1218,70 @@ body, html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    z-index: 400;
+  }
+  .main-menu__item {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .main-menu__link {
+    display: block;
+    line-height: 40px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .main-menu__link:hover {
+    color: brown;
+    opacity: 1;
   }
 }
 
-.page2 .main-menu {
-  min-width: 320px;
-  display: none;
-  position: absolute;
-  opacity: 0.3;
-  top: 10%;
-  left: 0;
-  right: 0;
-  background-color: black;
-}
+/*
+.page2 {
+  .main-menu {
+    min-width: 320px;
+    display: none;
+    position: absolute;
+    opacity: 0.3;
+    top: 10%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    &__list {
+      display: flex;
+      flex-direction: column;
+      z-index: 400;
+    }
 
-.page2 .main-menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  z-index: 400;
-}
+    &__item {
+      width: 100%;
+      display: block;
+      text-align: center;
 
-.page2 .main-menu__item {
-  width: 100%;
-  display: block;
-  text-align: center;
-}
+    }
 
-.page2 .main-menu__link {
-  display: block;
-  line-height: 40px;
-  color: #fff;
-  border-bottom: 1px solid #fff;
+    &__link {
+      display: block;
+      line-height: 40px;
+      color: #fff;
+      border-bottom: 1px solid #fff;
+      &:hover {
+        color: brown;
+        opacity: 1;
+      }
+    }
+  }
 }
-
-.page2 .main-menu__link:hover {
-  color: brown;
-  opacity: 1;
-}
-
+*/
 .menu-btn {
+  display: block;
   opacity: 0.7;
   position: absolute;
   top: 1px;
   right: 20px;
   z-index: 300;
   background: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   border-radius: 50%;
 }
 
@@ -1342,14 +1353,6 @@ body, html {
   font-size: 1.4rem;
   margin: 20px auto;
   text-decoration: none;
-}
-
-.hidden-menu .logo {
-  top: -43px;
-  margin-right: 102%;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
 }
 
 @media (max-width: 840px) {

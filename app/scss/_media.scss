@@ -5,19 +5,42 @@
     }
   }
   .main-menu {
-    width: 100%;
+    min-width: 320px;
     display: none;
+    position: absolute;
+    opacity: 0.3;
+    top: 10%;
+    left: 0;
+    right: 0;
+    background-color: black;
     &__list {
-
       display: flex;
       flex-direction: column;
-      align-items: center;
+      z-index: 400;
+    }
 
+    &__item {
+      width: 100%;
+      display: block;
+      text-align: center;
+
+    }
+
+    &__link {
+      display: block;
+      line-height: 40px;
+      color: #fff;
+      border-bottom: 1px solid #fff;
+      &:hover {
+        color: brown;
+        opacity: 1;
+      }
     }
   }
 }
 
 //стили для второй страницы
+/*
 .page2 {
   .main-menu {
     min-width: 320px;
@@ -53,16 +76,16 @@
     }
   }
 }
+*/
 
 .menu-btn {
+  display:block;
   opacity: 0.7;
   position: absolute;
   top: 1px;
   right: 20px;
   z-index: 300;
   background: #fff;
-  display: flex;
-  justify-content: flex-end;
   border-radius: 50%;
 }
 
@@ -117,11 +140,7 @@
     text-decoration: none;
   }
 
-  .logo {
-    top: -43px;
-    margin-right: 102%;
-    order: 2;
-  }
+
 
 }
 
