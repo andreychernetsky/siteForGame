@@ -159,6 +159,25 @@
   .section {
     padding: 40px 0;
   }
+  .game {
+    &__inner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 15px;
+    }
+    &__slider {
+      width: 100%;
+    }
+    &__video {
+      width: 100%;
+    }
+    &__prev, &__next, &__text {
+      font-size: 11px
+    }
+  }
+
 }
 
 @media (max-width: 684px) {
