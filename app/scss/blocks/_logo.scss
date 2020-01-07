@@ -1,13 +1,12 @@
 .logo{
   //order: 2;
-  position:relative;
-  top:-34px;
-  left: 47%;
+
   transform: translateX(-50%);
   z-index: 60;
 
   &__picture {
-
+    top:-35px;
+    left: 47%;
     position: absolute;
     width: 100px;
     height: 100px;

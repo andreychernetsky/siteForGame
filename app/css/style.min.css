@@ -711,9 +711,6 @@ body, html {
 }
 
 .logo {
-  position: relative;
-  top: -34px;
-  left: 47%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -721,6 +718,8 @@ body, html {
 }
 
 .logo__picture {
+  top: -35px;
+  left: 47%;
   position: absolute;
   width: 100px;
   height: 100px;
@@ -933,6 +932,23 @@ body, html {
   color: #7d7d7d;
 }
 
+.section__text-span {
+  color: #520611;
+}
+
+.section__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: red;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.section__link:hover {
+  color: #520611;
+}
+
 .accordion {
   padding-bottom: 130px;
   /* with shadow */
@@ -1112,6 +1128,8 @@ body, html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .game__video {
@@ -1366,6 +1384,32 @@ body, html {
 @media (max-width: 770px) {
   .section {
     padding: 40px 0;
+  }
+  .game__inner {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 15px;
+  }
+  .game__video {
+    width: 100%;
+  }
+  .game__slider {
+    width: 100%;
+  }
+  .game__prev, .game__next, .game__text {
+    font-size: 11px;
+  }
+  .picture__sign-block {
+    padding: 4px 0 4px 0;
   }
 }
 
