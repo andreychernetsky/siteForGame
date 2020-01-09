@@ -151,6 +151,7 @@
   window.addEventListener('scroll', trackScroll);
   goTopBtn.addEventListener('click', backToTop);
 })();
+/*
 // slider
 
   let slideIndex = 1;
@@ -166,8 +167,8 @@
 
   function showSlides(n) {
     let i;
-    let slides = document.getElementsByClassName("slider__item");
-    let dots = document.getElementsByClassName("slider__dot");
+    let slides = document.getElementsByClassName("slider2__item");
+    let dots = document.getElementsByClassName("slider2__dot");
     if (n > slides.length) {
       slideIndex = 1
     }
@@ -183,3 +184,64 @@
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
   }
+
+
+*/
+// slider
+(function () {
+  class SlideShow {
+    constructor(startIndex, element) {
+      this.startIndex = startIndex;
+      this.currentIndex = this.startIndex;
+      this.element = element;
+      this.slides = this.element.querySelectorAll('.slider__item');
+      this.setActiveSlide();
+      this.next();
+      this.prev();
+    }
+
+    setActiveSlide() {
+      this.slides.forEach((item, index) => {
+        if (index === this.currentIndex) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      })
+
+    }
+
+    next() {
+      let nextBtn = this.element.querySelector('[data-way="next"]');
+      nextBtn.addEventListener('click', () => {
+        if (this.currentIndex === this.slides.length - 1) {
+          this.currentIndex = 0;
+        } else {
+          this.currentIndex++;
+        }
+        this.setActiveSlide();
+      })
+
+    }
+
+    prev() {
+      let prevBtn = this.element.querySelector('[data-way="prev"]');
+      prevBtn.addEventListener('click', () => {
+        if (this.currentIndex === 0) {
+          this.currentIndex = this.slides.length - 1;
+        } else {
+          this.currentIndex--;
+        }
+        this.setActiveSlide();
+      })
+    }
+  }
+
+  let slideShow = document.querySelectorAll('.slider');
+
+  slideShow.forEach(item => {
+    new SlideShow(0, item)
+  })
+
+
+}());
