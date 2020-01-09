@@ -1091,15 +1091,15 @@ body, html {
   display: block;
 }
 
-.picture {
+.slider-picture {
   position: relative;
 }
 
-.picture__source {
+.slider-picture__source {
   max-width: 100%;
 }
 
-.picture__footer {
+.slider-picture__footer {
   width: 100%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
@@ -1109,11 +1109,11 @@ body, html {
   color: #ffffff;
 }
 
-.picture__sign-block {
+.slider-picture__sign-block {
   padding: 16px 20px 16px;
 }
 
-.picture__title {
+.slider-picture__title {
   display: block;
   font-size: 14px;
   margin-bottom: 0;
@@ -1450,6 +1450,6 @@ body, html {
     max-width: 100%;
   }
   .game__slider {
-    padding: 42px 5px 210px 0;
+    padding: 42px 5px 30px 0;
   }
 }
