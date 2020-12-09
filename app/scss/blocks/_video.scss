@@ -4,18 +4,16 @@
   flex-direction: column;
   align-items: center;
   &__inner {
-    display: flex;
-    justify-content: space-between;
+
     max-width: 100%;
     width: 100%;
     margin-bottom: 3%;
     flex-wrap: wrap;
   }
   &__wrapp {
-    display: block;
-    width:20%;
-    margin: 0 3px;
-    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 3px;
     flex-wrap: wrap;
   }
   &__item {
