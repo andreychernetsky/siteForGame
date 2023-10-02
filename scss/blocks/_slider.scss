@@ -1,0 +1,49 @@
+.slider {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin:auto;
+
+  &__nav {
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    margin-top: -25px;
+    position: absolute;
+    top: 20%;
+    transition: all linear .3s;
+    width: 50px;
+    background:#FFC000;
+    &:hover {
+      background-color: rgba(0, 0, 0, .8);
+    }
+
+  }
+  &__nav--prev {
+    left: 19%;
+  }
+  &__nav--next {
+    right: 13%;
+  }
+
+  &__item {
+    display: none;
+    position: relative;
+  }
+  &__item.active {
+    animation: fade linear 1.5s;
+    display: block;
+  }
+
+  &__picture {
+    vertical-align: middle;
+    max-width: 100%;
+  }
+
+}
+
+

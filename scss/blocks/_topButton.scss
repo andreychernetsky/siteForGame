@@ -1,0 +1,26 @@
+.topButton {
+  position: fixed;
+  bottom: 40px;
+  right: 9px;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 30px;
+  background:#BA4887;
+  opacity: 0.3;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  display: none;
+}
+
+.topButton:hover {
+  background: green;
+  opacity: 1;
+  color: #fff;
+}
+
+.topButton__show {
+  display: block;
+}

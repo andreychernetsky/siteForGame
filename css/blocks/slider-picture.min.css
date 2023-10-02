@@ -1,0 +1,27 @@
+.slider-picture {
+  position: relative;
+}
+
+.slider-picture__source {
+  max-width: 100%;
+}
+
+.slider-picture__footer {
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  color: #ffffff;
+}
+
+.slider-picture__sign-block {
+  padding: 16px 20px 16px;
+}
+
+.slider-picture__title {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 0;
+}
